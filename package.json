@@ -1,0 +1,25 @@
+{
+	"name": "artycles-cli",
+	"description": "Command-line interface for Artycles",
+	"version": "0.0.1",
+	"author": "kdi",
+	"contributors": [
+		{ "name": "Makis Tracend", "email": "makis@kdi.co" }
+	],
+	"homepage": "http://artycl.es",
+	"keywords": ["artycles", "aggregate", "cli", "json"],
+	"repository": {
+	"type": "git",
+		"url": "git://github.com/artycles/cli.git"
+	},
+	"engines": { "node": ">=0.8.x" },
+	"main": "index",
+	"bin": {
+		"artycles": "bin/artycles"
+	},
+	"dependencies": {
+		"commander": "2.1.0",
+		"artycles-api": "*",
+		"prompt": "0.2.12"
+	}
+}
