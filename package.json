@@ -12,14 +12,22 @@
 	"type": "git",
 		"url": "git://github.com/artycles/cli.git"
 	},
+	"bugs": {
+		"url": "http://github.com/artycles/cli/issues"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "http://www.makesites.org/licenses/MIT"
+	}],
 	"engines": { "node": ">=0.8.x" },
 	"main": "index",
 	"bin": {
-		"artycles": "bin/artycles"
+		"crudr": "bin/artycles"
 	},
 	"dependencies": {
 		"commander": "2.1.0",
-		"artycles-api": "*",
-		"prompt": "0.2.12"
+		"crudr-api": "*",
+		"prompt": "0.2.12",
+		"underscore": "1.7.0"
 	}
 }
