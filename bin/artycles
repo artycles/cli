@@ -32,38 +32,48 @@ program
 program
 	.command('user [id]')
 	.description('Read user info')
+	.option("-f, --files", "List all files for user")
+	.option("-s, --stores", "List all stores for user")
 	.action(function(id, options){
 		id = id || false;
 		process.nextTick(function(){
 			exec.user( id, options )
 		});
+	})
+	.on('--help', function() {
+		console.log('  Examples:');
+		console.log();
+		console.log('    $ user {{id}}');
+		console.log('    $ user {{id}} --files');
+		console.log('    $ user {{id}} --stores');
+		console.log();
 	});
 
-/* Product */
+/* File */
 program
-	.command('product [id]')
+	.command('file [id]')
 	.description('Read product details')
-	.option("-a, --all", "List all products for user")
+	.option("-a, --all", "List all files for user")
 	.action(function(id, options){
 		id = id || false;
 		process.nextTick(function(){
-			exec.product( id, options )
+			exec.file( id, options )
 		});
 	})
 	.on('--help', function() {
 		console.log('  Examples:');
 		console.log();
-		console.log('    $ product {{id}}');
-		console.log('    $ product --all');
+		console.log('    $ file {{id}}');
+		console.log('    $ file --all');
 		console.log();
-});
+	});
 
-/* Subscriptions */
+/* Store */
 program
-	.command('sub [id]')
-	.description('Read subscriber info, optionally from product')
-	.option("-a, --all", "Read all subscribers")
-	.option("-i, --item <number>", "Output a single item by its id")
+	.command('store [id]')
+	.description('Read store details')
+	.option("-a, --all", "Read all stores")
+	.option("-f, --files", "List all files for store")
 	.option("-k, --keys <list>", "Return only certain fields")
 	.option("-n, --number <number>", "Limit number of items returned")
 	.option("-q, --query <string>", "Output items based on conditions")
@@ -71,16 +81,16 @@ program
 	.action(function(id, options){
 		id = id || false;
 		process.nextTick(function(){
-			exec.sub( id, options )
+			exec.store( id, options )
 		});
 	})
 	.on('--help', function() {
 		console.log('  Examples:');
 		console.log();
-		console.log('    $ sub -i {{id}}');
-		console.log('    $ sub {{user}} --all');
+		console.log('    $ store {{id}}');
+		console.log('    $ store {{id}} --all');
 		console.log();
-});
+	});
 
 program.parse(process.argv);
 
