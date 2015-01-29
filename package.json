@@ -1,7 +1,7 @@
 {
 	"name": "artycles-cli",
 	"description": "Command-line interface for Artycles",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "kdi",
 	"contributors": [
 		{ "name": "Makis Tracend", "email": "makis@kdi.co" }
